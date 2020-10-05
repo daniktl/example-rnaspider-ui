@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="section-header">General information</div>
+    RNAtive aims to rank RNA 3D models sharing the same sequence when the reference 3D structure is unknown. The models
+    can result from in silico prediction of RNA 3D structure or experimental structure determination, for example via
+    NMR spectroscopy.
+    So far, no approach has been proposed to solve this problem for RNAs. While the protein researchers apply
+    consensus-based quality assessment methods here. Their methods rank 3D predictions of a given protein assuming that
+    conservative 3D motifs shared among the majority of structures could be native-like.
+    RNAtive follows the idea implemented for proteins. It identifies interaction networks for all analysed RNA 3D
+    models. Next, it constructs a consensus-driven RNA secondary structure which includes base-pairs whose confidence
+    score exceeds a predefined threshold. Optionally, the RNA secondary structure taken from Rfam can be used as a
+    consensus. The confidence of a base-pair represents a percentage of RNA 3D predictions in which this base-pair
+    occured. Finally, RNAtive constructs the Interaction Network Fidelity-based ranking of all input RNA 3D models upon
+    their comparison to the consensus secondary structure. The top-ranked model is considered close to the native
+    structure.
+
+    RNAtive workflow:
+
+    <div class="section-header">How to use RNAtive?</div>
+    RNAtive can be executed in one of two ways:
+    <table>
+        <tr>
+            <th>
+                basic
+            </th>
+            <th>
+                Users upload a set of RNA 3D structures and click the Run button.
+            </th>
+        <tr>
+            <th>
+                advanced
+            </th>
+            <th>
+                Users upload a set of RNA 3D structures and the reference RNA secondary structure (e.g., from Rfam),
+                select the tool for base-pair identification in the input 3D structures, set the confidence threshold
+                for consensus, define base pairings to be considered.
+            </th>
+        </tr>
+    </table>
+
+    <h5>Step 1: uploading input data</h5>
+    <p>
+        In the first step, users upload a minimum of 5 RNA 3D structures predicted/modeled for a given RNA sequence. The
+        data files (PDB or PDBx/mmCIF) can be uploaded separately or in the ZIP archive. An input archive can include up
+        to
+        100 RNA models. In the case of multi-model files, only the first model is used during analysis. The files are
+        uploaded directly from a local disc (use the Browse button to browse through the local filesystem).
+    </p>
+
+    <p>
+        Additionally, the system provides 2 examples ready for processing. They enable an easy and straightforward start
+        with RNAtive.
+    </p>
+
+    <p>
+    Uploaded RNA 3D structures can be viewed in either textual or graphical form after clicking the Display file or 3D
+    view button, respectively. Users can deselect some uploaded models, thus, discarding them from further analysis.
+    </p>
+
+    <h5>Step 2: providing email for notification (optional)</h5>
+    <p>
+    Users can provide the email to be notified that RNAtive finished computing. Email sent from the RNAtive system
+    includes a link to the results page. The link is valid for 2 weeks.
+    </p>
+
+    <h5>Step 3: setting advanced options (optional)</h5>
+    <p>
+    After clicking Show advanced options button, the configuration panel with additional options is displayed. It allows
+    setting parameters for intermediate processing steps:
+    </p>
+
+{% endblock %}

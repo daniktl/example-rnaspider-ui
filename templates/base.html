@@ -43,22 +43,29 @@
 
 <div class="nav-wrapper">
     <div class="container">
-        <a href="#" class="logo">RNAspider</a>
+        <a href="{{ url_for("home_page") }}" class="logo">RNAspider</a>
     </div>
     <div class="nav-menu-outer">
         <div id="mySidenav" class="nav container">
 
             <div class="nav-item">
-                <a class="nav-link" href="{{ url_for("home") }}">Home</a>
+                <a class="nav-link" href="{{ url_for("home_page") }}">Home</a>
             </div>
             <div class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="{{ url_for("about_page") }}">About</a>
             </div>
             <div class="nav-item">
-                <a class="nav-link" href="#">Help</a>
+                <a class="nav-link" href="{{ url_for("help_page") }}">Help</a>
             </div>
             <div class="nav-item">
-                <a class="nav-link" href="#">Cite us</a>
+                <a class="nav-link" href="{{ url_for("cite_us_page") }}">Cite us</a>
+            </div>
+
+            <div class="splitter-space"></div>
+
+            <div class="analytics-info">
+                <span class="icon-user   icon-inverted"></span>
+                3 online, 10784750 overall
             </div>
 
         </div>
@@ -90,14 +97,7 @@
 
     <div class="container panel shadow" id="container">
         {% block content %}
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dignissimos doloribus facere facilis rem.
-            Culpa, minus perspiciatis praesentium provident quam quibusdam quos voluptatum. Aliquid blanditiis,
-            consequatur dignissimos ipsa molestiae necessitatibus!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque cupiditate dolorem ducimus, eveniet itaque
-            laborum magnam modi molestias non nulla quaerat quisquam, repudiandae, voluptate. Cum necessitatibus odio
-            odit! Nesciunt, ullam!
-            <hr>
-            <h3>Workflow</h3>
+
         {% endblock %}
     </div>
 

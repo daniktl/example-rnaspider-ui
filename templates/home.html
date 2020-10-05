@@ -1,1 +1,54 @@
 {% extends "base.html" %}
+
+{% block content %}
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dignissimos doloribus facere facilis rem.
+    Culpa, minus perspiciatis praesentium provident quam quibusdam quos voluptatum. Aliquid blanditiis,
+    consequatur dignissimos ipsa molestiae necessitatibus!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque cupiditate dolorem ducimus, eveniet itaque
+    laborum magnam modi molestias non nulla quaerat quisquam, repudiandae, voluptate. Cum necessitatibus odio
+    odit! Nesciunt, ullam!
+    <hr>
+    <h3>Workflow</h3>
+
+    <form>
+        <div class="input-group">
+            <h4>Input type</h4>
+            <div class="input-group-flex">
+                <input id="type-2d" class="checkbox-option" type="radio" name="type" value="2d" checked>
+                <label for="type-2d">
+                    <span class="icon-rna"></span>
+                    2D
+                </label>
+                <input id="type-pdb" class="checkbox-option" type="radio" name="type" value="pdb">
+                <label for="type-pdb">
+                    <span class="icon-file"></span>
+                    PDB format
+                </label>
+            </div>
+        </div>
+        <div class="input-group">
+            <h4>Enter data</h4>
+            <div class="input-group-flex">
+                <input id="input-text" class="checkbox-option" type="radio" name="input" value="text-field" checked>
+                <label for="input-text">
+                    <span class="icon-keyboard"></span>
+                    Text field
+                </label>
+                <input id="input-file" class="checkbox-option" type="radio" name="input" value="file">
+                <label for="input-file">
+                    <span class="icon-file"></span>
+                    File
+                </label>
+                <input id="input-example" class="checkbox-option" type="radio" name="input" value="example">
+                <label for="input-example">
+                    <span class="icon-shuffle"></span>
+                    Example
+                </label>
+            </div>
+        </div>
+        <textarea name="" id="" class="block"></textarea>
+    </form>
+
+
+{% endblock %}

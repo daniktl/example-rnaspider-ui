@@ -7,10 +7,32 @@ load_dotenv(dotenv_path)
 
 app = Flask(__name__)
 
+media_version = "1.0"
+
+
+@app.context_processor
+def inject_vars():
+    return dict(media_version=media_version)
+
 
 @app.route('/')
-def home():
+def home_page():
     return render_template("home.html")
+
+
+@app.route('/about')
+def about_page():
+    return render_template("about.html")
+
+
+@app.route('/help')
+def help_page():
+    return render_template("help.html")
+
+
+@app.route('/cite-us')
+def cite_us_page():
+    return render_template("cite.html")
 
 
 if __name__ == '__main__':
