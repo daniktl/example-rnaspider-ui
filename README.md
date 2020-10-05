@@ -1,5 +1,7 @@
 # Example RNAspider UI
 
+![screenshot](/screenshots/main_screenshot.png)
+
 This repository contains sample of UI for RNAspider with simple backend using Python/Flask.
 
 If you don't have python3 installed on your PC, follow [this manual](https://realpython.com/installing-python/).
