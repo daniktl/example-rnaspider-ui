@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    {#    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}" sizes="16x16">#}
+    {#    <link rel="manifest" href="/manifest.json">#}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {#    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"#}
+    {#            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"#}
+    {#            crossorigin="anonymous"></script>#}
+    {#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>#}
+    {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"#}
+    {#            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"#}
+    {#            crossorigin="anonymous"></script>#}
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600"/>
+    <script src="{{ url_for('static', filename='actions.js') }}?v={{ media_version }}"
+            type="application/javascript"></script>
+
+
+    {#    <style>#}
+    {#        :root {#}
+    {#            --google-ico-dark: url({{ url_for('static', filename='google-ico-dark.png') }});#}
+    {#            --google-ico-light: url({{ url_for('static', filename='google-ico-light.png') }});#}
+    {#        }#}
+    {#    </style>#}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v={{ media_version }}" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+
+    {% block script_include %}
+    {% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>
+
+
+</head>
+
+<body>
+
+<div class="nav-wrapper">
+    <div class="container">
+        <a href="#" class="logo">RNAspider</a>
+    </div>
+    <div class="nav-menu-outer">
+        <div id="mySidenav" class="nav container">
+
+            <div class="nav-item">
+                <a class="nav-link" href="{{ url_for("home") }}">Home</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Help</a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">Cite us</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="notification-wrapper">
+                <div class="notification-div notification-{{ category }}" id="notification-div">
+                    <div class="notification-content">
+                        {{ message }}
+                    </div>
+                    <div class="notification-timer">
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div class="nav-icon" id="nav-toogler" onclick="hideCloseNav(this)">
+    <div></div>
+</div>
+
+<div class="main-wrapper">
+
+    <div class="container panel shadow" id="container">
+        {% block content %}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dignissimos doloribus facere facilis rem.
+            Culpa, minus perspiciatis praesentium provident quam quibusdam quos voluptatum. Aliquid blanditiis,
+            consequatur dignissimos ipsa molestiae necessitatibus!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque cupiditate dolorem ducimus, eveniet itaque
+            laborum magnam modi molestias non nulla quaerat quisquam, repudiandae, voluptate. Cum necessitatibus odio
+            odit! Nesciunt, ullam!
+            <hr>
+            <h3>Workflow</h3>
+        {% endblock %}
+    </div>
+
+</div>
+
+
+</body>
+</html>
