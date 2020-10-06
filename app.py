@@ -7,7 +7,7 @@ load_dotenv(dotenv_path)
 
 app = Flask(__name__)
 
-media_version = "1.0"
+media_version = "1.0.1"
 
 
 @app.context_processor
