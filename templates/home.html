@@ -13,51 +13,67 @@
 
     <form>
         <div class="input-group">
-            <h4>Input type</h4>
+            <h4>Enter your <span class="italic">.pdb</span> file</h4>
             <div class="input-group-flex">
-                <input id="type-2d" class="checkbox-option" type="radio" name="type" value="2d" checked>
-                <label for="type-2d">
-                    <span class="icon-rna"></span>
-                    2D
-                </label>
-                <input id="type-pdb" class="checkbox-option" type="radio" name="type" value="pdb">
-                <label for="type-pdb">
+                <input id="source-file" class="checkbox-option" type="radio" name="source" value="file" checked>
+                <label for="source-file">
                     <span class="icon-file"></span>
-                    PDB format
+                    Local file
+                </label>
+                <input id="source-bank" class="checkbox-option" type="radio" name="source" value="bank">
+                <label for="source-bank">
+                    <span class="icon-db"></span>
+                    PDB bank ID
                 </label>
             </div>
         </div>
+
+        <div class="drop-region">
+            <div class="drop-message">
+                Drag & Drop <span class="italic">.pdb</span> files or click to upload
+            </div>
+            <div class="drop-list">
+
+            </div>
+            <input type="file" name="data-file" hidden multiple>
+            {#            <input type="file" hidden accept=".pdb">#}
+
+        </div>
+
         <div class="input-group">
-            <h4>Enter data</h4>
+            <h4>2D models</h4>
             <div class="input-group-flex">
-                <input id="input-text" class="checkbox-option" type="radio" name="input" value="text-field" checked>
-                <label for="input-text">
+                <input id="2d-rnapdbee" class="checkbox-option" type="radio" name="2d" value="rnapdbee" checked>
+                <label for="2d-rnapdbee">
+                    <span class="icon-rna"></span>
+                    Auto
+                </label>
+                <input id="2d-input" class="checkbox-option" type="radio" name="2d" value="input">
+                <label for="2d-input">
                     <span class="icon-keyboard"></span>
-                    Text field
-                </label>
-                <input id="input-file" class="checkbox-option" type="radio" name="input" value="file">
-                <label for="input-file">
-                    <span class="icon-file"></span>
-                    File
-                </label>
-                <input id="input-example" class="checkbox-option" type="radio" name="input" value="example">
-                <label for="input-example">
-                    <span class="icon-shuffle"></span>
-                    Example
+                    Manually
                 </label>
             </div>
         </div>
-        <textarea name="" id="" class="block"></textarea>
-    </form>
+        <div class="input-group shadow">
 
-    <h3>Another example</h3>
-    <form class="home-textarea-file-wrapper shadow">
+            <div class="drop-region">
+                <div class="drop-message">
+                    Drag & Drop files or click to upload
+                </div>
+                <div class="drop-list">
 
-        <input id="home-input" class="home-input">
-        <label class="label-home-input" for="home-input">Upload a file</label>
-        <textarea id="home-textarea" class="home-textarea" placeholder="Or enter data manually..."></textarea>
+                </div>
+                <input type="file" name="data-file" hidden multiple>
+                {#            <input type="file" hidden accept=".pdb">#}
+
+            </div>
+            <textarea id="home-textarea" class="home-textarea" placeholder="Or enter data manually..."></textarea>
+
+        </div>
         <button type="submit">Send</button>
     </form>
+
 
 
 {% endblock %}

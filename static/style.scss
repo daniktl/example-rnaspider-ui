@@ -9,6 +9,10 @@ body {
   align-items: center;
 }
 
+.italic {
+  font-style: italic;
+}
+
 $basic_roundness: 7px;
 $primary_accent_color: #00695c;
 $secondary_accent_color: #00897b;
@@ -41,6 +45,7 @@ $secondary_accent_color: #00897b;
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+  border-radius: $basic_roundness;
 }
 
 .nav-menu-outer {
@@ -149,6 +154,10 @@ $secondary_accent_color: #00897b;
   background-image: url("shuffle.png");
 }
 
+.icon-db {
+  background-image: url("database.png");
+}
+
 .icon-inverted {
   filter: invert(1);
 }
@@ -253,7 +262,7 @@ h5 {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.checkbox-option + label span{
+.checkbox-option + label span {
   height: 24px;
   width: 24px;
   background-size: cover;
@@ -281,16 +290,11 @@ textarea.block {
   box-sizing: border-box;
   border: 0;
   min-height: 250px;
-  margin: .4em;
+  padding: .4em;
   font-family: "Open Sans", sans-serif;
 }
 
-.home-textarea-file-wrapper {
-  //border: 1px solid grey;
-  //background-color: rgba($secondary_accent_color, .3);
-  //padding: .3em;
-  border-radius: $basic_roundness;
-  width: 100%;
+form {
 
   button {
     background-color: $secondary_accent_color;
@@ -309,5 +313,51 @@ textarea.block {
 
   button:hover {
     opacity: 1;
+  }
+}
+
+
+.drop-region {
+  position: relative;
+  background-color: #fff;
+  border-radius: $basic_roundness;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: .3s;
+  font-weight: 600;
+  opacity: .7;
+  border: 2px dashed grey;
+}
+
+.drop-region:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.drop-region:hover {
+  opacity: 1;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.1);
+}
+
+.drop-list {
+  text-align: left;
+
+  div:before {
+    content: " ";
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: contain;
+    background-image: url(file.png);
+    vertical-align: sub;
+    margin-right: 3px;
   }
 }
