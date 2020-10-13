@@ -7,7 +7,7 @@ load_dotenv(dotenv_path)
 
 app = Flask(__name__)
 
-media_version = "1.0.1"
+media_version = "1.1"
 
 
 @app.context_processor
@@ -33,6 +33,11 @@ def help_page():
 @app.route('/cite-us')
 def cite_us_page():
     return render_template("cite.html")
+
+
+@app.route("/task<int:task_id>")
+def task_page(task_id):
+    return render_template("task.html", task_id=task_id)
 
 
 if __name__ == '__main__':

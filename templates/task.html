@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h2>Task <a href="{{ url_for("task_page", task_id=task_id) }}">#{{ task_id }}</a></h2>
+    {#  TODO copy link to buffer  #}
+
+    <h3 class="font-normal">Current status: <span class="task-status status-queued animate">queued</span> <span
+            class="task-status status-pending animate">pending</span> <span class="task-status status-finished animate">finished</span>
+    </h3>
+
+    <h3>History</h3>
+    <table class="table-block">
+        <tr>
+            <th>
+                <span class="task-status status-queued">Submitted</span>
+            </th>
+            <th>
+                October 13, 2020, 1:30 a.m.
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <span class="task-status status-pending">Start of performing</span>
+            </th>
+            <th>
+                October 13, 2020, 1:35 a.m.
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <span class="task-status status-finished">Finished</span>
+            </th>
+            <th>
+                October 13, 2020, 1:37 a.m.
+            </th>
+        </tr>
+
+    </table>
+
+    <div class="task-data-container">
+        <div class="section-header">Results</div>
+        <h3>Inputs</h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam cumque deserunt dicta esse eveniet illo
+        incidunt ipsum magnam nesciunt quis, repellendus vel velit! Cumque ea esse eum nemo sed?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dolore earum eligendi laborum magni natus
+        nobis possimus quo repellat unde. Distinctio eaque eius, minima molestiae nostrum quas quisquam veritatis.
+        Excepturi?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, asperiores cupiditate doloribus, error esse
+        molestias necessitatibus, nisi non officia porro quis quo quos repellat repellendus repudiandae sed tempora
+        voluptatem voluptatum.
+
+        <h3>3D view</h3>
+
+        <div class="fake-frame">
+
+        </div>
+        <h3>
+            List of knots
+            <button class="btn">Download</button>
+        </h3>
+    <table class="table-block">
+        <tr>
+            <th>knot_id</th>
+            <th>duplex</th>
+            <th>description</th>
+        </tr>
+        <tr>
+            <th>knot_id</th>
+            <th>half-duplex</th>
+            <th>description</th>
+        </tr>
+        <tr>
+            <th>knot_id</th>
+            <th>duplex</th>
+            <th>description</th>
+        </tr>
+    </table>
+    </div>
+
+{% endblock %}

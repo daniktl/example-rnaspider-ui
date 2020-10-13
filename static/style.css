@@ -11,6 +11,135 @@ body {
   font-style: italic;
 }
 
+.font-normal {
+  font-weight: 500;
+}
+
+button, button:focus {
+  outline: none;
+}
+
+.btn {
+  background-color: #00897b;
+  font-size: 0.9em;
+  color: white;
+  padding: 0.3em 0.7em;
+  margin: 0.2em;
+  border: 0;
+  cursor: pointer;
+  border-radius: 7px;
+  opacity: 0.9;
+  transition: 300ms ease-in-out;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.task-status {
+  font-weight: 600;
+}
+
+a:link {
+  color: black;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+a:visited {
+  color: black;
+}
+
+a:link:hover {
+  opacity: 1;
+}
+
+h2 a:link {
+  letter-spacing: 2px;
+}
+
+.task-status:before {
+  content: " ";
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-image: url("upload.svg");
+  fill: #00695c;
+  vertical-align: middle;
+  margin-right: 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.status-queued {
+  color: grey;
+}
+
+.animate.status-queued:before {
+  animation: 2s blinking infinite linear;
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.status-pending {
+  color: #1073d1;
+}
+
+.status-pending:before {
+  background-image: url("loading.png");
+}
+
+.animate.status-pending:before {
+  animation: 2s pendingAnimation infinite linear;
+}
+
+@keyframes pendingAnimation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.status-finished {
+  color: #00695c;
+}
+
+.status-finished:before {
+  background-image: url("done.png");
+}
+
+.animate.status-finished:before {
+  animation: 1s jumping linear;
+}
+
+@keyframes jumping {
+  0% {
+    transform: translateY(-7px);
+  }
+  50% {
+    transform: translateY(1px);
+  }
+  75% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+table.table-block {
+  width: 100%;
+}
+
 .nav-wrapper {
   background-color: #00695c;
   width: 100%;
@@ -31,7 +160,18 @@ body {
 }
 
 .main-wrapper {
-  margin: 2em 0;
+  margin-top: 2em;
+}
+
+.fake-frame {
+  width: 100%;
+  height: 500px;
+  transition: 0.3s;
+  border-radius: 7px;
+}
+
+.fake-frame:hover {
+  background-color: #ddd;
 }
 
 .shadow {
@@ -83,6 +223,10 @@ body {
   }
 }
 @media (max-width: 900px) {
+  .main-wrapper {
+    width: 100%;
+  }
+
   .container {
     width: 100%;
   }
@@ -149,7 +293,7 @@ body {
 }
 
 .section-header {
-  font-size: 1.3em;
+  font-size: 1.5em;
   font-weight: 700;
   color: #00695c;
   margin: 0.5em 0;
@@ -336,6 +480,45 @@ form button:hover {
   background-image: url(file.png);
   vertical-align: sub;
   margin-right: 3px;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 0;
+  flex-wrap: wrap;
+}
+.footer .footer-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0.4em;
+}
+.footer .footer-item .footer-item-icon {
+  width: 45px;
+  height: 45px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 1em;
+}
+.footer .footer-item .icon-ibch {
+  background-image: url("ibch.png");
+}
+.footer .footer-item .icon-put {
+  background-image: url("put.png");
+}
+.footer .footer-item .footer-item-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer .footer-item .footer-item-text a {
+  font-size: 0.9em;
+  display: inline-block;
+  margin: 0.2em;
 }
 
 /*# sourceMappingURL=style.css.map */

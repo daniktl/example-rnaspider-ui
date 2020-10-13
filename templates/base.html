@@ -3,38 +3,20 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    {#    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}" sizes="16x16">#}
-    {#    <link rel="manifest" href="/manifest.json">#}
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {#    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"#}
-    {#            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"#}
-    {#            crossorigin="anonymous"></script>#}
-    {#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>#}
-    {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"#}
-    {#            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"#}
-    {#            crossorigin="anonymous"></script>#}
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700"/>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600"/>
     <script src="{{ url_for('static', filename='actions.js') }}?v={{ media_version }}"
             type="application/javascript"></script>
-
-
-    {#    <style>#}
-    {#        :root {#}
-    {#            --google-ico-dark: url({{ url_for('static', filename='google-ico-dark.png') }});#}
-    {#            --google-ico-light: url({{ url_for('static', filename='google-ico-light.png') }});#}
-    {#        }#}
-    {#    </style>#}
-
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v={{ media_version }}" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 
     {% block script_include %}
     {% endblock %}
 
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}RNAspider{% endblock %}</title>
 
 
 </head>
@@ -101,6 +83,17 @@
         {% endblock %}
     </div>
 
+</div>
+
+<div class="footer">
+    <div class="footer-item">
+        <span class="footer-item-icon icon-put"></span>
+        <span class="footer-item-text"><a href="http://www2.cs.put.poznan.pl/en/">Institute of Computing Science</a>, <a href="http://www.put.edu.pl/">Poznan University of Technology</a></span>
+    </div>
+    <div class="footer-item">
+        <span class="footer-item-icon icon-ibch"></span>
+        <span class="footer-item-text"><a href="http://www.ibch.poznan.pl/en/home/">Institute of Bioorganic Chemistry</a>, <a href="https://institution.pan.pl/">Polish Academy of Sciences</a></span>
+    </div>
 </div>
 
 
